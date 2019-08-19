@@ -1,27 +1,77 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-      List
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Mis Mascotas
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
+<ion-content padding="true">
+
+    <div *ngFor="let mascota of list" class="ion-padding" class="card-group">
+        <div class="card">
+            <img *ngIf="mascota.tipo == 'Felino'" src="../../assets/img/cat.jpg" class="card-img" alt="...">
+            <img *ngIf="mascota.tipo == 'Canino'" src="../../assets/img/dog.jpg" class="card-img" alt="...">
+        </div>
+        <div class="card-body">
+            <h6 class="card-title"></h6>
+            <ion-item>
+
+                <ion-text color="primary"> &nbsp;&nbsp;<b>{{mascota.nombre  | uppercase}}</b> </ion-text>
+            </ion-item>
+            <ion-item *ngIf="mascota.genero == 'Hembra'" class="item-icon-left">
+                <ion-icon name="ios-female" color="primary" style="zoom:2;" btn-xl></ion-icon> <i class="icon ion-a-text"></i>
+                <ion-text color="primary"> &nbsp;&nbsp;<b>Hembra</b> </ion-text>
+            </ion-item>
+            <ion-item *ngIf="mascota.genero == 'Macho'" class="item-icon-left">
+                <ion-icon name="ios-male" color="primary" style="zoom:2;" btn-xl></ion-icon> <i class="icon ion-a-text"></i>
+                <ion-text color="primary"> &nbsp;&nbsp;<b>Macho</b> </ion-text>
+            </ion-item>
+            <ion-item class="item-icon-left">
+                <ion-icon name="logo-octocat" color="primary" style="zoom:2;" btn-xl></ion-icon> <i class="icon ion-a-text"></i>
+                <ion-text color="primary"> &nbsp;&nbsp;<b>Edad: {{mascota.edad}}</b> </ion-text>
+            </ion-item>
+            <ion-item class="item-icon-left">
+                <ion-icon name="ios-medkit" color="tertiary" style="zoom:2;" btn-xl></ion-icon> <i class="icon ion-a-text"></i>
+                <ion-text color="tertiary"> &nbsp;&nbsp;<b>Esterilizado: {{mascota.castrado}}</b> </ion-text>
+
+            </ion-item>
+
+            <ion-item class="item-icon-left">
+                <ion-icon name="ios-bug" color="primary" style="zoom:2;" btn-xl></ion-icon> <i class="icon ion-a-text"></i>
+                <ion-text color="primary"> &nbsp;&nbsp;<b>Vacunas: <ion-button [routerLink]="['/vacunas/',mascota.id]">Ver</ion-button></b></ion-text>
+            </ion-item>
+
+
+
+            <!-- <ion-item class="item-icon-left">
+
+                <ion-icon name="ios-calendar" color="primary" style="zoom:2;" btn-xl></ion-icon> <i class="icon ion-a-text"></i>
+
+                <ion-text color="primary">&nbsp;&nbsp;<b>Ultima visita: {{mascota.ultimav.toDate() | date: 'mediumDate'}}</b></ion-text>
+
+            </ion-item>
+            <ion-item class="item-icon-left">
+
+                <ion-icon name="ios-calendar" color="primary" style="zoom:2;" btn-xl></ion-icon> <i class="icon ion-a-text"></i>
+
+                <ion-text color="primary">&nbsp;&nbsp;<b>Prox. Control: {{mascota.control.toDate() | date: 'mediumDate'}}</b></ion-text>
+
+            </ion-item> -->
+            <ion-item class="item-icon-left">
+
+                <ion-icon name="ios-medical" color="primary" style="zoom:2;" btn-xl></ion-icon> <i class="icon ion-a-text"></i>
+
+                <ion-text color="primary">&nbsp;&nbsp;<b>Tratamientos: <ion-button [routerLink]="['/tratamientos/',mascota.id]">Ver</ion-button></b></ion-text>
+
+            </ion-item>
+
+
+        </div>
     </div>
-  -->
+
+
 </ion-content>

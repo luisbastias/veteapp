@@ -17,9 +17,39 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'Mis mascotas',
       url: '/list',
-      icon: 'list'
+      icon:'paw'
+    },
+    {
+      title: 'Cupones',
+      url: '/cupones',
+      icon: 'ios-card'
+    },
+    {
+      title: 'Mis Cupones',
+      url: '/miscupones',
+      icon: 'ios-card'
+    },
+    {
+      title: 'Consejos',
+      url: '/miscupones',
+      icon: 'ios-pulse'
+    },
+    {
+      title: 'Ubicacion',
+      url: '/ubicacion',
+      icon: 'ios-navigate'
+    },
+    {
+      title: 'Sociales',
+      url: '/miscupones',
+      icon: 'logo-facebook'
+    },
+    {
+      title: 'Salir',
+      url: '/salir',
+      icon: 'md-exit'
     }
   ];
 

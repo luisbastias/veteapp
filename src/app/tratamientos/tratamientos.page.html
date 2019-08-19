@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Mis Cupones
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="background" padding="true">
+    <ul class="list-group">
+
+        <li *ngFor="let trata of list" class="list-group-item">
+            <ion-item class="item-icon-left">
+                <h5 class="mb-1">Fecha de visita: {{trata.ultimav.toDate() | date: 'mediumDate'}}
+                    <ion-icon name="ios-calendar" color="primary" style="zoom:2;" btn-xl></ion-icon>
+                </h5>
+            </ion-item>
+            <br>
+            <p class="mb-1">Diagnostico: {{trata.diagnostico}}</p>
+            <p class="mb-1">Tratamiento: {{trata.tratamiento}}</p>
+            <p class="mb-1">Rp.: {{trata.rp}}</p>
+            <p class="mb-1">Control: {{trata.control.toDate() | date: 'mediumDate'}}</p>
+
+        </li>
+
+    </ul>
+
+</ion-content>

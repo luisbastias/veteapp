@@ -1,5 +1,7 @@
 {
   "name": "veteapp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

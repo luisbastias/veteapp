@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Vacunas
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background" padding="true">
+    <div class="row header">
+        <div class="col item-icon-left">Vacuna
+            <ion-icon name="ios-bug" color="ligh" style="zoom:1;" btn-xl></ion-icon>
+        </div>
+        <div class="col  item-icon-left">Colocada
+            <ion-icon name="ios-calendar" color="ligh" style="zoom:1;" btn-xl></ion-icon>
+        </div>
+        <div class="col  item-icon-left">Proxima
+            <ion-icon name="ios-calendar" color="ligh" style="zoom:1;" btn-xl></ion-icon>
+        </div>
+
+    </div>
+    <ion-grid *ngFor="let vacuna of list">
+
+        <ion-row>
+
+            <ion-col class="col">
+                <div>{{vacuna.vacuna}}</div>
+            </ion-col>
+            <ion-col class="colf">
+                <div>{{vacuna.fecha.toDate() | date: 'mediumDate'}}</div>
+            </ion-col>
+            <ion-col class="colp">
+                <div>{{vacuna.proxima.toDate() | date: 'mediumDate'}}</div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

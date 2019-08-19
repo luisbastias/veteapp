@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { ListPage } from './list.page';
+import { firebaseConfig } from '../../environments/firebase.config';
+
 
 @NgModule({
   imports: [

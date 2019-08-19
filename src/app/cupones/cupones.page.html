@@ -1,0 +1,65 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            Cupones
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+
+    <ion-slides pager="true">
+        <ion-slide text-center *ngFor="let cupones of list4">
+
+            <div class="text-white">
+                <img *ngIf="cupones.tipo == 'alimentos'" src="../../assets/img/cupon1.fw.png" class="card-img slide-img" alt="...">
+                <img *ngIf="cupones.tipo == 'servicios'" src="../../assets/img/cupong2.fw.png" class="card-img slide-img" alt="...">
+                <img *ngIf="cupones.tipo == 'accesorios'" src="../../assets/img/cupon3.fw.png" class="card-img slide-img" alt="...">
+
+                <div class="card-img-overlay position: relative;">
+                    <h5 class="bgf">{{cupones.nombre}}</h5>
+
+                    <div class="divxx">
+                        <h1 class="display-4 text-center">{{cupones.valor}} OFF</h1>
+                    </div>
+                </div>
+                <div>
+                    <br>
+
+                    <br> {{cupones.descripcion}}
+                    <br> Valido desde: {{cupones.desde.toDate() | date: 'mediumDate'}} - hasta: {{cupones.hasta.toDate() | date: 'mediumDate'}}
+                </div>
+
+            </div>
+            <ion-footer no-border text-center>
+
+                <ion-grid fixed>
+                    <ion-row>
+                        <ion-col size="10" offset="1">
+
+                            <ion-button color="primary" expand="full" color="tertiary" mode="ios" (click)="canjearcupon(cupones.id,cupones.desde,cupones.hasta,cupones.nombre,cupones.valor)">
+                                <!-- <ion-button color="primary" expand="full" color="tertiary" mode="ios" (click)="canjeocupon(cupones.id)">  -->
+                                OBTENER CUPON
+                            </ion-button>
+                            <br>
+                            <br>
+                        </ion-col>
+                    </ion-row>
+
+
+
+                </ion-grid>
+
+
+
+            </ion-footer>
+
+
+        </ion-slide>
+
+
+    </ion-slides>
+</ion-content>

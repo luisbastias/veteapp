@@ -1,4 +1,61 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+.row-centered {
+    text-align: center;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none;
+    /* reset the text-align */
+    text-align: left;
+    /* inline-block space fix */
+    margin-right: -4px;
+    text-align: center;
+}
+
+ion-content.background {
+    --background: url(../../assets/img/fondo.png) 0 0/100% 100% no-repeat;
+}
+
+ion-label {
+    justify-content: center;
+    position: absolute;
+    top: 70px;
+    right: 25px;
+    color: white;
+    background-color: rgba(150, 149, 149, 0.315);
+    line-height: 24px;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.flexcontainer {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.flexcontainercontent {
+    top: 300px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+
+.imgcenter {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 30%;
+    transform: translateY(-50%);
 }

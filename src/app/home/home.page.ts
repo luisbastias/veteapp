@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
-
+  constructor(private launchNavigator: LaunchNavigator) {}
+goto(){
+  let options: LaunchNavigatorOptions = {
+		app: this.launchNavigator.APP.GOOGLE_MAPS,
+            
+			};
+  this.launchNavigator.navigate("Veterinaria El Prado, Guaymallén, Mendoza",options)
+  .then(
+    success => console.log('Launched navigator'),
+    error => console.log('Error launching navigator', error)
+  );
+}
+face(){
+  window.open("https://www.facebook.com/veterinariaelprado/")
+}
 }
